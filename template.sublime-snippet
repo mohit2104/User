@@ -1,0 +1,41 @@
+<snippet>
+	<content><![CDATA[
+# include <bits/stdc++.h>
+# define ll long long
+# define mp make_pair
+# define pb push_back
+# define rep(i, n) for( ll (i) = 0; (i) < (n); (i)++)
+# define REP(i, n) for( ll (i) = 1; (i) <= (n); (i)++)
+# define wl(i) while((i)--)
+# define vec(i) vector < ll > (i)
+# define ma(i) map < ll, ll > (i)
+# define sf(i) scanf("%lld",&(i))
+# define pr(i) printf("%lld ",(i))
+# define prn(i) printf("%lld\n",(i))
+# define cpr(i) cout<<(i)<<" "
+# define cprn(i) cout<<(i)<<endl
+# define csf(i) cin>>(i)
+# define srt(v) sort( v.begin(), v.end() )
+# define srtc(v, x) sort( v.begin(), v.end(), x)
+using namespace std;
+
+bool compare( void *a, void *b ){
+	ll x = (ll *)a;
+	ll y = (ll *)b;
+	return x < y;
+}
+
+int main(){
+	ll t;
+	sf(t);
+	REP(kr, t){
+		printf("Case #%lld: ",kr);
+	}
+	return 0;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>template</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
