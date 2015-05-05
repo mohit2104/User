@@ -17,12 +17,11 @@
 # define csf(i) cin>>(i)
 # define srt(v) sort( v.begin(), v.end() )
 # define srtc(v, x) sort( v.begin(), v.end(), x)
+# define srtr(v) sort( v.begin(), v.end(), greater< ll >())
 using namespace std;
 
-bool compare( void *a, void *b ){
-	ll x = (ll *)a;
-	ll y = (ll *)b;
-	return x < y;
+bool compare( const ll &a, const ll &b ){
+	return a < b ;
 }
 
 int main(){
