@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+ll bigMult( ll a, ll b ){
+	if( b == 0 )
+		return 0;
+	return ( bigMult( ( a * 10 ) % mod, b / 10 ) + a * ( b % 10 ) ) % mod;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bigMult</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
