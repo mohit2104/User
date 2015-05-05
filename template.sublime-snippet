@@ -18,6 +18,7 @@
 # define srt(v) sort( v.begin(), v.end() )
 # define srtc(v, x) sort( v.begin(), v.end(), x)
 # define srtr(v) sort( v.begin(), v.end(), greater< ll >())
+# define mod 1000000007
 using namespace std;
 
 bool compare( const ll &a, const ll &b ){
