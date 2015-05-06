@@ -1,0 +1,77 @@
+<snippet>
+	<content><![CDATA[
+#define N 20
+#define MAX (1+(1<<6)) 
+#define inf 0x7fffffff
+ 
+ll arr[N];
+ll tree[MAX];
+ll lazy[MAX];
+ 
+void build_tree( ll node, ll a, ll b ) {
+  	if(a > b) return; 
+  	if(a == b) { 
+    		tree[node] = arr[a]; 
+		return;
+	}
+	build_tree(node*2, a, (a+b)/2); 
+	build_tree(node*2+1, 1+(a+b)/2, b); 
+	tree[node] = tree[node*2] + tree[node*2+1]; 
+}
+ 
+void update_tree( ll node, ll a, ll b, ll i, ll j, ll value ) {
+  	if(lazy[node] != 0) { 
+   		tree[node] = tree[node] + ( b - a + 1 ) * lazy[node];  
+		if(a != b) {
+			lazy[node*2] += lazy[node]; 
+    		lazy[node*2+1] += lazy[node]; 
+		}
+   		lazy[node] = 0; 
+  	}
+	if(a > b || a > j || b < i ) 
+		return;
+    
+  	if( a >= i && b <= j ) { 
+    		tree[node] = tree[node] + ( b - a + 1 ) * value;
+			if(a != b) { 
+			lazy[node*2] += value;
+			lazy[node*2+1] += value;
+		}
+    	return;
+	}
+	update_tree(node*2, a, (a+b)/2, i, j, value); 
+	update_tree(1+node*2, 1+(a+b)/2, b, i, j, value); 
+	tree[node] = tree[node*2] + tree[node*2+1]; 
+}
+
+ll query_tree( ll node, ll a, ll b, ll i, ll j ) {	
+	if( a > b || a > j || b < i ) 
+		return 0; 
+	if(lazy[node] != 0) { 
+		tree[node] = tree[node] + ( b - a + 1 ) * lazy[node]; 
+		if(a != b) {
+			lazy[node*2] += lazy[node]; 
+			lazy[node*2+1] += lazy[node]; 
+		}
+		lazy[node] = 0; 
+	}
+	if( a >= i && b <= j ) 
+		return tree[node]; 
+	ll q1 = query_tree( node * 2, a, ( a + b ) / 2, i, j ); 
+	ll q2 = query_tree( 1 + node * 2, 1 + ( a + b ) / 2, b, i, j ); 
+	ll res = q1 + q2;
+	return res;
+}
+
+//	for(ll i = 0; i < N; i++) arr[i] = 1;   								// initialize the base array
+//	build_tree(1, 0, N-1);                  								// build initial tree. both 0 and N - 1 are included.
+//	memset(lazy, 0, sizeof lazy);           								// set initial value of lazy array to 0
+// 	update_tree(1, 0, N-1, 0, 6, 5); 										// Increment range [0, 6] by 5
+//	cout << query_tree(1, 0, N-1, 0, N-1) << endl; 							// Get sum of element in range [0, N-1]
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>lazy_segment_tree</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

@@ -1,13 +1,13 @@
 <snippet>
 	<content><![CDATA[
-void bfs( ll a ){
+void bfs( ll a, vec v[]){
 	queue < pr > q;
 	q.push(mp(a, 0));
 	while(!q.empty()){
 		pr x = q.top();
 		q.pop();
 		for( ll i = 0; i < v[x.fs].size(); i++ ){
-			q.push(mp(v[x.fs][i]), x.se + 1);
+			q.push(mp(v[x.fs][i], x.se + 1));
 		}
 	}
 	return;
