@@ -2,6 +2,9 @@
 	<content><![CDATA[
 # include <bits/stdc++.h>
 # define ll long long
+# define pr pair < ll, ll >
+# define first fs
+# define second se
 # define mp make_pair
 # define pb push_back
 # define rep(i, n) for( ll (i) = 0; (i) < (n); (i)++)

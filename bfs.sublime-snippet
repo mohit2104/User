@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+void bfs( ll a ){
+	queue < pr > q;
+	q.push(mp(a, 0));
+	while(!q.empty()){
+		pr x = q.top();
+		q.pop();
+		for( ll i = 0; i < v[x.fs].size(); i++ ){
+			q.push(mp(v[x.fs][i]), x.se + 1);
+		}
+	}
+	return;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bfs</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
