@@ -1,7 +1,7 @@
 <snippet>
 	<content><![CDATA[
 void bfs( ll a, vec v[]){
-	queue < pr > q;
+	queue < par > q;
 	q.push(mp(a, 0));
 	while(!q.empty()){
 		pr x = q.top();

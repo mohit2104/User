@@ -1,12 +1,8 @@
 <snippet>
 	<content><![CDATA[
-#define N 20
-#define MAX (1+(1<<6)) 
-#define inf 0x7fffffff
- 
-ll arr[N];
-ll tree[MAX];
-ll lazy[MAX];
+ll arr[SEGMENT_MAX];
+ll tree[3 * SEGMENT_MAX];
+ll lazy[3 * SEGMENT_MAX];
  
 void build_tree( ll node, ll a, ll b ) {
   	if(a > b) return; 

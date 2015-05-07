@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[
+int prime_mark[MAX_PRIME] = {0}; ll prime[MAX_PRIME]; 
+vector < ll > prime_factors[MAX_PRIME];
+ll prime_r = 0;
+
+void seive(){
+	for( ll i = 2; i < MAX_PRIME; i++ ){
+		if( prime_mark[i] )
+			continue;
+		prime[prime_r++] = i;
+		ll j = 1;
+		while( ( i * j ) < MAX_PRIME ){
+			prime_factors[i*j].push_back(i);
+			prime_mark[i*j] = 1;
+			j++;
+		}
+	}
+	return;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>seive</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

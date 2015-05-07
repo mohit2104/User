@@ -2,7 +2,7 @@
 	<content><![CDATA[
 # include <bits/stdc++.h>
 # define ll long long
-# define pr pair < ll, ll >
+# define par pair < ll, ll >
 # define first fs
 # define second se
 # define mp make_pair
@@ -22,6 +22,9 @@
 # define srtc(v, x) sort( v.begin(), v.end(), x)
 # define srtr(v) sort( v.begin(), v.end(), greater< ll >())
 # define mod 1000000007
+# define MAX_PRIME 0
+# define SEGMENT_MAX 0
+
 using namespace std;
 
 bool compare( const ll &a, const ll &b ){
