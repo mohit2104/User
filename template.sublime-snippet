@@ -2,9 +2,9 @@
 	<content><![CDATA[
 # include <bits/stdc++.h>
 # define ll long long
-# define par pair < ll, ll >
-# define first fs
-# define second se
+# define pll pair < ll, ll >
+# define fs first 
+# define se second
 # define mp make_pair
 # define pb push_back
 # define rep(i, n) for( ll (i) = 0; (i) < (n); (i)++)
@@ -32,6 +32,8 @@ bool compare( const ll &a, const ll &b ){
 }
 
 int main(){
+	freopen("read.txt", "r", stdin);
+	freopen("write.txt", "w", stdout);
 	ll t;
 	sf(t);
 	REP(kr, t){
